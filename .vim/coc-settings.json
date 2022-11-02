@@ -1,0 +1,15 @@
+{
+  "inlayHint.enable": false,
+  "diagnostic.enable": true,
+  "clangd.enabled": true,
+  "clangd.compilationDatabasePath": "build/",
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--suggest-missing-includes",
+    "-j=8"
+  ],
+  "python.pythonPath": "python3",
+  "python.linting.pylintEnabled": true
+}

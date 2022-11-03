@@ -21,7 +21,10 @@
 # SOFTWARE.
 .PHONY:build clean dev docker run
 
-dev:build
+default:build
+	@docker-compose run --rm noetic tmuxinator
+
+dev:
 	@docker-compose run --rm noetic tmuxinator
 
 build:

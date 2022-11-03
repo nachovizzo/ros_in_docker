@@ -35,10 +35,10 @@ can figure out how to do that.
 1. Git clone the repo locally and `cd` into it.
 1. Launch `make docker` to create a local docker container image with all the nice stuff installed.
    If you need any extra dependency, now is the time to add it to the [Dockerfile](./Dockerfile).
-1. Create an `src/` directory inside the repository.
+1. Create an `src/` directory inside the repository: `mkdir -p src/`
 1. Clone inside the `src/` directory the ROS1 code you want to develop/test. I will be using the
    [ros_tutorials](https://github.com/ros/ros_tutorials) as an example, but it can be as complex as
-   you wish.
+   you wish, so, `git clone git@github.com:ros/ros_tutorials.git src/`
 1. Launch `make`, this will build your project and open a `tmux` session with all the batteries
    included.
 

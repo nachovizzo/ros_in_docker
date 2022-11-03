@@ -20,23 +20,24 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 .PHONY:build clean dev docker run
+CONTAINER_NAME?="noetic"
 
 default:build
-	@docker-compose run --rm noetic tmuxinator
+	@docker-compose run --rm ros tmuxinator
 
 dev:
-	@docker-compose run --rm noetic tmuxinator
+	@docker-compose run --rm ros tmuxinator
 
 build:
-	@docker-compose run --rm noetic catkin init 
-	@docker-compose run --rm noetic catkin build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-	@docker-compose run -w /home/user/ros_ws/build/ --rm noetic merge_compile_commands
-
-clean:
-	@docker-compose run --rm noetic catkin clean
+	@docker-compose run --rm ros catkin init 
+	@docker-compose run --rm ros catkin build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+	@docker-compose run -w /home/user/ros_ws/build/ --rm ros merge_compile_commands
 
 docker:
-	docker build -t ros_in_docker:noetic .
+	docker build -t ros_in_docker:$(CONTAINER_NAME) .
+
+clean:
+	@docker-compose run --rm ros catkin clean
 
 run:
-	@docker-compose run --rm noetic
+	@docker-compose run --rm ros

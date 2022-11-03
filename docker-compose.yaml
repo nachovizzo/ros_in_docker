@@ -21,8 +21,8 @@
 # SOFTWARE.
 version: "3.0"
 services:
-  noetic:
-    image: ros_in_docker:noetic
+  ros:
+    image: ros_in_docker:${CONTAINER_NAME:-noetic}
     network_mode: "host"
     environment:
       - DISPLAY=$DISPLAY

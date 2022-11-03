@@ -19,10 +19,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
 name: noetic
 root: ~/ros_ws/
-pre_window: source devel/setup.zsh
 startup_window: editor
 tmux_command: tmux -2
 windows:

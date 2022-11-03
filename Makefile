@@ -20,7 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 .PHONY:build clean dev docker run
-CONTAINER_NAME?="noetic"
+CONTAINER_NAME?=noetic
+export CONTAINER_NAME
 
 default:build
 	@docker-compose run --rm ros tmuxinator

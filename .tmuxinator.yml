@@ -35,3 +35,6 @@ windows:
   - editor:
       panes:
         - nvim -c ":CocCommand explorer --preset floating src/"
+  - monitor:
+      panes:
+        - htop

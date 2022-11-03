@@ -42,6 +42,12 @@ can figure out how to do that.
 1. Launch `make`, this will build your project and open a `tmux` session with all the batteries
    included.
 
+## What about injecting rosbags inside the dev container?
+
+Got you covered, just use the environment variable `export ROS_BAGS=/path/to/data/in/host` and
+launch `make`. Your rosbag files will be mounted in the dev container in `~/ros_ws/bags` and are
+read-only accessible to the ROS1 applications.
+
 ## Security concerns
 
 The entire setup is NOT safe at all, so, use it at your own risk. I'm mounting directories from the

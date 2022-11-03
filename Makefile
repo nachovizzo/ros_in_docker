@@ -35,7 +35,7 @@ build:
 	@docker-compose run -w /home/user/ros_ws/build/ --rm ros merge_compile_commands
 
 docker:
-	docker build -t ros_in_docker:$(CONTAINER_NAME) .
+	docker build -t ros_in_docker/noetic:$(CONTAINER_NAME) .
 
 clean:
 	@docker-compose run --rm ros catkin clean

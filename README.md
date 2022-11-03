@@ -26,7 +26,7 @@ it works.
 For now, you only need, I expect this repo to be used by "intermediate" developers, so I guess you
 can figure out how to do that.
 
-- Docker
+- docker
 - docker-compose
 
 ## How to use with your project
@@ -47,6 +47,11 @@ can figure out how to do that.
 Got you covered, just use the environment variable `export ROS_BAGS=/path/to/data/in/host` and
 launch `make`. Your rosbag files will be mounted in the dev container in `~/ros_ws/bags` and are
 read-only accessible to the ROS1 applications.
+
+## How to extend the container
+
+Could not be more simple, just add all your user-space command (use sudo) on the
+[Dockerfile](./Dockerfile). `sudo apt install <your-libs>` and enjoy the setup.
 
 ## Security concerns
 

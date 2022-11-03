@@ -19,17 +19,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-version: "3.0"
-services:
-  ros:
-    image: ros_in_docker/noetic:${CONTAINER_NAME:-noetic}
-    network_mode: "host"
-    environment:
-      - DISPLAY=$DISPLAY
-    volumes:
-      - .:/home/user/ros_ws/
-      - ${ROS_BAGS:-/dev/tmp}:/home/user/ros_ws/bags/:ro
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - /run/user/1000/gdm/Xauthority:/home/user/.Xauthority
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
+docker:
+	docker build -t ignaciovizzo/ros_in_docker:noetic .
+
+push:
+	docker push ignaciovizzo/ros_in_docker:noetic

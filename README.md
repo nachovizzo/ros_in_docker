@@ -17,11 +17,13 @@ https://user-images.githubusercontent.com/21349875/199551739-c33dee77-57c7-4c10-
 - [x] VSCode
 
 ## How to use with your project (VSCode)
+![vscode](https://user-images.githubusercontent.com/21349875/200361817-572292e3-3d73-4fb1-bd9d-562539fa2fb4.png)
 
 1. Click on "Use this template", or fork if you like.
 1. Git clone the repo locally and `cd` into it.
 1. Create an `src/` directory inside the repository: `mkdir -p src/`
-1. Clone inside the `src/` directory the ROS1 code you want to develop/test. I will be using the
+1. Clone inside the `src/` directory the ROS1 code you want to
+ develop/test. I will be using the
    [ros_tutorials](https://github.com/ros/ros_tutorials) as an example, but it can be as complex as
    you wish, so, `git clone git@github.com:ros/ros_tutorials.git src/`
 1. Launch `code .`, and then go to the "Remote Explorer" tab and hit "reopen the current folder in a
@@ -30,6 +32,8 @@ https://user-images.githubusercontent.com/21349875/199551739-c33dee77-57c7-4c10-
 1. Launch the `Build Task`, Ctrl+Shift+p and type "Tasks: Run Build Task"
 
 ## How to use with your project (tmux)
+
+![tmux](https://user-images.githubusercontent.com/21349875/200361914-446b13a8-ee50-436b-be9f-0bbb8f48ce43.png)
 
 1. Click on "Use this template", or fork if you like.
 1. Git clone the repo locally and `cd` into it.

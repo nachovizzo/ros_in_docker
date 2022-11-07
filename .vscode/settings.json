@@ -1,0 +1,25 @@
+{
+    "files.exclude": {
+        "compile_commands.json": true,
+        "**/.git": true,
+        ".vim/": true,
+        ".base/": true,
+    },
+    "files.watcherExclude": {
+        "build/": true,
+        "devel/": true,
+        "logs/": true,
+        ".catkin_tools/": true,
+    },
+    // C++ stuff
+    "C_Cpp.autocomplete": "Disabled",
+    "C_Cpp.formatting": "Disabled",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    // Python
+    "python.formatting.provider": "black",
+    "python.linting.pylamaEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pydocstyleEnabled": false,
+    "python.linting.pycodestyleEnabled": false,
+}

@@ -22,5 +22,8 @@
 docker:
 	docker build -t ignaciovizzo/ros_in_docker:noetic .
 
+run:
+	docker run --rm -it ignaciovizzo/ros_in_docker:noetic
+
 push:
 	docker push ignaciovizzo/ros_in_docker:noetic

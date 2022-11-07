@@ -7,29 +7,29 @@ applications without having to install them locally.
 
 https://user-images.githubusercontent.com/21349875/199551739-c33dee77-57c7-4c10-a272-c60b98645368.mp4
 
-# Tested host-machines
+## Tested host-machines
 
 - Ubuntu 22.04
 
 ## Supported development environments
 
 - [x] tmux
-- [ ] VSCode
+- [x] VSCode
 
-## GUI Supported?
+## How to use with your project (VSCode)
 
-Of course, you can run `rviz` and friends inside the dev container, it looks a bit ugly but at least
-it works.
+1. Click on "Use this template", or fork if you like.
+1. Git clone the repo locally and `cd` into it.
+1. Create an `src/` directory inside the repository: `mkdir -p src/`
+1. Clone inside the `src/` directory the ROS1 code you want to develop/test. I will be using the
+   [ros_tutorials](https://github.com/ros/ros_tutorials) as an example, but it can be as complex as
+   you wish, so, `git clone git@github.com:ros/ros_tutorials.git src/`
+1. Launch `code .`, and then go to the "Remote Explorer" tab and hit "reopen the current folder in a
+   container", this should launch a full dev environemnt with some extensions to develop your ROS
+   application in the dockerize enviornment
+1. Launch the `Build Task`, Ctrl+Shift+p and type "Tasks: Run Build Task"
 
-## Install host-machine dependencies
-
-For now, you only need, I expect this repo to be used by "intermediate" developers, so I guess you
-can figure out how to do that.
-
-- docker
-- docker-compose
-
-## How to use with your project
+## How to use with your project (tmux)
 
 1. Click on "Use this template", or fork if you like.
 1. Git clone the repo locally and `cd` into it.
@@ -53,6 +53,20 @@ read-only accessible to the ROS1 applications.
 Could not be more simple, just add all your user-space command (use sudo) on the
 [Dockerfile](./Dockerfile). `sudo apt install <your-libs>` and enjoy the setup.
 
+## GUI Supported?
+
+Of course, you can run `rviz` and friends inside the dev container, it looks a bit ugly but at least
+it works.
+
+## Install host-machine dependencies
+
+For now, you only need, I expect this repo to be used by "intermediate" developers, so I guess you
+can figure out how to do that.
+
+- docker
+- docker-compose
+- (VSCode) dev-containers extension
+
 ## Security concerns
 
 The entire setup is NOT safe at all, so, use it at your own risk. I'm mounting directories from the
@@ -66,4 +80,3 @@ I built this project on top of my [dotfiles](https://github.com/nachovizzo/dotfi
 so it's completely overfitted to my own needs and I don't intend to provide support for extra stuff.
 If there is something you don't like or don't need, feel free to modify your copy of the Dockerfile.
 You are in full control of what you want and not.
-

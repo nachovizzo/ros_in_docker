@@ -27,7 +27,7 @@ services:
     environment:
       - DISPLAY=$DISPLAY
     volumes:
-      - .:/home/user/ros_ws/
+      - .:/home/user/ros_ws
       - ${ROS_BAGS:-/dev/tmp}:/home/user/ros_ws/bags/:ro
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /run/user/1000/gdm/Xauthority:/home/user/.Xauthority

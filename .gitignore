@@ -2,7 +2,10 @@ src/
 devel/
 build/
 logs/
+compile_commands.json
 .catkin_tools/
+.clangd/
+
 # Created by https://www.toptal.com/developers/gitignore/api/c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++
 

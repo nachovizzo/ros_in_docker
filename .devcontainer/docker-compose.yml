@@ -1,0 +1,11 @@
+version: '3.0'
+services:
+  ros:
+    user: user
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/home/user/ros_ws:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    entrypoint: /ros_entrypoint.sh

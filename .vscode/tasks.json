@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "catkin init",
+            "command": "/ros_entrypoint.sh catkin init",
+            "type": "shell"
+        },
+        {
+            "label": "catkin build",
+            "type": "shell",
+            "command": "/ros_entrypoint.sh catkin build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+        },
+        {
+            "label": "create compile_commands.json",
+            "type": "shell",
+            "command": "merge_compile_commands && ln -f compile_commands.json ../",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            }
+        },
+        {
+            "label": "Build",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "catkin init",
+                "catkin build",
+                "create compile_commands.json"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

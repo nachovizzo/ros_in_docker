@@ -62,5 +62,6 @@ RUN sed -i 1,3d /home/$USER_NAME/.gitconfig
 # Add ROS entrypoint for zsh
 COPY ./ros_entrypoint.sh /
 ENTRYPOINT ["/ros_entrypoint.sh"]
-WORKDIR /home/$USER_NAME/ros_ws
-CMD ["zsh"]
+
+# Go back to root
+USER root

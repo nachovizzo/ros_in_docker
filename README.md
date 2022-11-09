@@ -54,8 +54,8 @@ read-only accessible to the ROS1 applications.
 
 ## How to extend the container
 
-Could not be more simple, just add all your user-space command (use sudo) on the
-[Dockerfile](./Dockerfile). `sudo apt install <your-libs>` and enjoy the setup.
+Could not be more simple, just add all your user-space command on the [Dockerfile](./Dockerfile).
+`apt install <your-libs>` and enjoy the setup.
 
 ## GUI Supported?
 

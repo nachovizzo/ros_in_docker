@@ -28,7 +28,7 @@ https://user-images.githubusercontent.com/21349875/199551739-c33dee77-57c7-4c10-
    you wish, so, `git clone git@github.com:ros/ros_tutorials.git src/`
 1. Launch `code .`, and then go to the "Remote Explorer" tab and hit "reopen the current folder in a
    container", this should launch a full dev environemnt with some extensions to develop your ROS
-   application in the dockerize enviornment
+   application in the dockerize environment
 1. Launch the `Build Task`, Ctrl+Shift+p and type "Tasks: Run Build Task"
 
 ## How to use with your project (tmux)

@@ -22,14 +22,6 @@
 FROM ignaciovizzo/ros_in_docker:noetic
 LABEL maintainer="Ignacio Vizzo <ignaciovizzo@gmail.com>"
 
-# Add any additional dependencies here:
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    rsync \
-    && rm -rf /var/lib/apt/lists/*
-
-# Newer cmake
-RUN pip install cmake
-
 # $USER_NAME Inherited from .base/Dockerfile
 WORKDIR /home/$USER_NAME/ros_ws
 CMD ["zsh"]

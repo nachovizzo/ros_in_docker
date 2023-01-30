@@ -41,4 +41,4 @@ clean:
 	@docker-compose run --rm ros catkin clean
 
 run:
-	@docker-compose run --rm ros
+	@docker-compose run -e "TERM=xterm-256color" --rm ros

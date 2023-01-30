@@ -60,6 +60,9 @@ RUN echo 'export HISTFILE=/home/$USER_NAME/ros_ws/.zsh_history' >> /home/$USER_N
 RUN sed -i 's/\"fwalch\"/\"agnoster\"/' /home/$USER_NAME/.zshrc
 RUN sed -i 1,3d /home/$USER_NAME/.gitconfig
 
+# Fetch changes from the yadm repo
+RUN $HOME/.local/bin/yadm pull https://github.com/nachovizzo/dotfiles.git main
+
 # Add ROS entrypoint for zsh
 COPY ./ros_entrypoint.sh /
 ENTRYPOINT ["/ros_entrypoint.sh"]

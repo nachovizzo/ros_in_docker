@@ -56,6 +56,7 @@ RUN python3 -m pip install --user --upgrade catkin-tools
 # Finish setup, and cleanup custom nacho stuff
 RUN echo 'source /opt/ros/noetic/setup.zsh 2>/dev/null || true' > /home/$USER_NAME/.zshrc_local
 RUN echo 'source /home/$USER_NAME/ros_ws/devel/setup.zsh 2>/dev/null || true' >> /home/$USER_NAME/.zshrc_local
+RUN echo 'export HISTFILE=/home/$USER_NAME/ros_ws/.zsh_history' >> /home/$USER_NAME/.zshrc_local
 RUN sed -i 's/\"fwalch\"/\"agnoster\"/' /home/$USER_NAME/.zshrc
 RUN sed -i 1,3d /home/$USER_NAME/.gitconfig
 

@@ -27,6 +27,9 @@ services:
     network_mode: "host"
     environment:
       - DISPLAY=$DISPLAY
+      - QT_X11_NO_MITSHM=1
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
     volumes:
       - .:/home/user/ros_ws
       - ${ROS_BAGS:-/dev/tmp}:/home/user/ros_ws/bags/:ro
@@ -34,3 +37,10 @@ services:
       - /run/user/1000/gdm/Xauthority:/home/user/.Xauthority
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

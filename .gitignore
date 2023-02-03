@@ -1,5 +1,6 @@
 src/
 devel/
+bags/
 build/
 logs/
 compile_commands.json

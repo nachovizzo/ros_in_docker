@@ -22,6 +22,11 @@
 FROM ignaciovizzo/ros_in_docker:noetic
 LABEL maintainer="Ignacio Vizzo <ignaciovizzo@gmail.com>"
 
+# Install extra ROS dependencies
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    ros-${ROS_DISTRO}-tf2-sensor-msgs \
+    && rm -rf /var/lib/apt/lists/*
+
 # $USER_NAME Inherited from .base/Dockerfile
 WORKDIR /home/$USER_NAME/ros_ws
 CMD ["zsh"]

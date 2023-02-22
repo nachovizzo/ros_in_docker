@@ -23,16 +23,16 @@
 CONTAINER_NAME?=kiss_icp
 export CONTAINER_NAME
 
-default:build
-	@docker-compose run --rm ros tmuxinator
+build:
+	@docker-compose run --rm ros catkin init 
+	@docker-compose run --rm ros catkin build -i --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+	@docker-compose run -w /home/user/ros_ws/build/ --rm ros merge_compile_commands
 
 dev:
 	@docker-compose run --rm ros tmuxinator
 
-build:
-	@docker-compose run --rm ros catkin init 
-	@docker-compose run --rm ros catkin build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-	@docker-compose run -w /home/user/ros_ws/build/ --rm ros merge_compile_commands
+default:build
+	@docker-compose run --rm ros tmuxinator
 
 docker:
 	docker build -t ros_in_docker/noetic:$(CONTAINER_NAME) .

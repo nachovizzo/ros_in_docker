@@ -27,6 +27,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     ros-${ROS_DISTRO}-tf2-sensor-msgs \
     && rm -rf /var/lib/apt/lists/*
 
+# Fetch modern cmake
+RUN pip install -U cmake
+
 # $USER_NAME Inherited from .base/Dockerfile
 WORKDIR /home/$USER_NAME/ros_ws
 CMD ["zsh"]

@@ -24,21 +24,21 @@ CONTAINER_NAME?=kiss_icp
 export CONTAINER_NAME
 
 build:
-	@docker-compose run --rm ros catkin init 
-	@docker-compose run --rm ros catkin build -i --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-	@docker-compose run -w /home/user/ros_ws/build/ --rm ros merge_compile_commands
+	@docker compose run --rm ros catkin init 
+	@docker compose run --rm ros catkin build -i --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+	@docker compose run -w /home/user/ros_ws/build/ --rm ros merge_compile_commands
 
 dev:
-	@docker-compose run --rm ros tmuxinator
+	@docker compose run --rm ros tmuxinator
 
 default:build
-	@docker-compose run --rm ros tmuxinator
+	@docker compose run --rm ros tmuxinator
 
 docker:
 	docker build -t ros_in_docker/noetic:$(CONTAINER_NAME) .
 
 clean:
-	@docker-compose run --rm ros catkin clean
+	@docker compose run --rm ros catkin clean
 
 run:
-	@docker-compose run -e "TERM=xterm-256color" --rm ros
+	@docker compose run -e "TERM=xterm-256color" --rm ros

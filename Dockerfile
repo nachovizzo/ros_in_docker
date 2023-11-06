@@ -27,6 +27,12 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     rsync \
     && rm -rf /var/lib/apt/lists/*
 
+ADD src /src/
+RUN apt-get update && \
+    rosdep update && \
+    rosdep install --from-paths /src --ignore-src -r -y \
+    && rm -rf /var/lib/apt/lists/*
+
 # $USER_NAME Inherited from .base/Dockerfile
 WORKDIR /home/$USER_NAME/ros_ws
 CMD ["zsh"]
